@@ -59,6 +59,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 var app = builder.Build();
 
 app.MapDefaultEndpoints();
@@ -75,6 +76,8 @@ if (app.Environment.IsDevelopment())
         AppDbContextSeed.SeedAsync(context, logger).Wait();
     });
 }
+
+app.UseMiddleware<GlobalExeptionHandleMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();

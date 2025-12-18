@@ -19,8 +19,12 @@ namespace ProjectManagement.Extensions
             _logger = logger;
             _env = env;
         }
+        public async Task InvokeAsync(HttpContext context)
+        {
+            await Handle(context);
+        }
 
-        public async void Handle(HttpContext context) 
+        public async Task Handle(HttpContext context) 
         {
             try
             {
