@@ -68,9 +68,10 @@ namespace ProjectManagement.Infrastracture.Repositories
             return await query.ToListAsync();
         }
 
-        public virtual async Task<TEntity> GetByIdAsync(long id)
+        public async Task<TEntity> GetByIdAsync(int id)
         {
-            return await _dbContext.Set<TEntity>().FindAsync(id);
+            var x = await _dbContext.Set<TEntity>().FindAsync(id);
+            return x;
         }
         #endregion
 

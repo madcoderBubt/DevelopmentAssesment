@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ProjectManagement.CQRS;
 using ProjectManagement.Infrastracture.Context;
 using ProjectManagement.Infrastracture.Interface;
 using ProjectManagement.Infrastracture.Repositories;
@@ -31,6 +32,10 @@ namespace ProjectManagement.Infrastracture
 
             services.AddScoped<JwtTokenService>();
             services.AddScoped<IAuthService, AuthService>();
+
+            services.AddTransient<Dispatcher>();
+
+            services.AddCQRSFromAssembly(Assembly.GetExecutingAssembly());
 
 
 

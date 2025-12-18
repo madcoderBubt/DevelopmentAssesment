@@ -1,4 +1,5 @@
 ﻿using ProjectManagement.Core.Entities;
+using ProjectManagement.CQRS;
 using ProjectManagement.Infrastracture.Interface;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,17 @@ using System.Threading.Tasks;
 
 namespace ProjectManagement.Infrastracture.DTOs.UserDTOs.Queries
 {
-    public class GetUserByIdHandler(IRepositoryAsync<UserEntity> _userRepository)
+    public class GetUserByIdHandler(IRepositoryAsync<UserEntity> _userRepository) : IQueryHandler<GetUserByIdRequest, GetUserResponse>
     {
-        //private readonly IRepositoryAsync<UserEntity> _userRepository;
-        public async Task<GetUserResponse> GetUsers(int Id)
+        public async Task<GetUserResponse> Handle(GetUserByIdRequest query)
         {
-            var user = await _userRepository.GetByIdAsync((long)Id);
-            return new() { Email = user.Email, FullName = user.FullName, Role = user.Role.ToString()};
+            var result = await _userRepository.GetByIdAsync(query.UserId);
+            return new() { 
+                Email = result.Email, 
+                FullName = result.FullName, 
+                RoleId = (int) result.Role, 
+                Role = result.Role.ToString() 
+            };
         }
     }
 }

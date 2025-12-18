@@ -24,6 +24,7 @@ builder.Services.AddLogging(config =>
     config.SetMinimumLevel(LogLevel.Information);
 });
 
+
 // JWT settings
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]!);

@@ -9,6 +9,7 @@ namespace ProjectManagement.Infrastracture.DTOs.UserDTOs.Queries
     public class GetUserResponse
     {
         public string FullName { get; set; }
+        public int RoleId { get; set; }
         public string Role { get; set; }
         public string Email { get; set; }
     }
