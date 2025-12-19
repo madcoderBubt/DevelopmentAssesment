@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProjectManagement.CQRS;
 using ProjectManagement.Infrastracture.DTOs.Auth;
 using ProjectManagement.Infrastracture.Services.Interfaces;
 
@@ -10,18 +12,20 @@ namespace ProjectManagement.Controllers
     public class AuthController : ControllerBase
     {
         private readonly ILogger<AuthController> _logger;
-        private readonly IAuthService _authService;
+        private readonly Dispatcher _dispatcher;
 
-        public AuthController(ILogger<AuthController> logger, IAuthService authService)
+        public AuthController(ILogger<AuthController> logger, Dispatcher dispatcher)
         {
             _logger = logger;
-            _authService = authService;
+            _dispatcher = dispatcher;
         }
 
         [HttpPost("token")]
         public async Task<IActionResult> GetToken(TokenRequest request)
         {
-            return Ok(await _authService.GetTokenAsync(request.Email, request.Password));
+            if (!ModelState.IsValid) return BadRequest(request);
+
+            return Ok(await _dispatcher.Handle<TokenRequest, TokenDTO>(request));
         }
     }
 }

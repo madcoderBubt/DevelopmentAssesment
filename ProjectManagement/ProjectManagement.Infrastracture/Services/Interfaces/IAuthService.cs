@@ -1,5 +1,5 @@
 ﻿using ProjectManagement.Core.Entities;
-using ProjectManagement.Infrastracture.DTOs;
+using ProjectManagement.Infrastracture.DTOs.Auth;
 using System;
 using System.Collections.Generic;
 using System.Linq;

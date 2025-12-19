@@ -1,6 +1,6 @@
 ﻿using Microsoft.Identity.Client;
 using ProjectManagement.Core.Entities;
-using ProjectManagement.Infrastracture.DTOs;
+using ProjectManagement.Infrastracture.DTOs.Auth;
 using ProjectManagement.Infrastracture.Interface;
 using ProjectManagement.Infrastracture.Repositories;
 using System;

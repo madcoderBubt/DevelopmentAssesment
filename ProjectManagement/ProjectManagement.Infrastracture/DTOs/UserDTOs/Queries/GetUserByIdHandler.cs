@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace ProjectManagement.Infrastracture.DTOs.UserDTOs.Queries
 {
-    public class GetUserByIdHandler(IRepositoryAsync<UserEntity> _userRepository) : IQueryHandler<GetUserByIdRequest, GetUserResponse>
+    public class GetUserByIdHandler(IRepositoryAsync<UserEntity> _userRepository) 
+        : IQueryHandler<GetUserByIdRequest, GetUserResponse>
     {
         public async Task<GetUserResponse> Handle(GetUserByIdRequest query)
         {

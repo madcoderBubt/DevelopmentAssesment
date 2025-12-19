@@ -8,12 +8,7 @@ using ProjectManagement.Infrastracture.Interface;
 using ProjectManagement.Infrastracture.Repositories;
 using ProjectManagement.Infrastracture.Services;
 using ProjectManagement.Infrastracture.Services.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectManagement.Infrastracture
 {
@@ -22,7 +17,9 @@ namespace ProjectManagement.Infrastracture
        
         public static IServiceCollection AddApplicationServicess(this IServiceCollection services, IConfiguration configuration)
         {
+            //services.AddFluentValidationAutoValidation();
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            //services.AddVa
 
             services.AddDbContext<AppDbContext>(op =>
             {
@@ -36,8 +33,6 @@ namespace ProjectManagement.Infrastracture
             services.AddTransient<Dispatcher>();
 
             services.AddCQRSFromAssembly(Assembly.GetExecutingAssembly());
-
-
 
             return services;
         }

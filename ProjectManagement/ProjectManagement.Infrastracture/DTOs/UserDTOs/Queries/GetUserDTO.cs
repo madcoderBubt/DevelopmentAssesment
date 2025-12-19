@@ -23,4 +23,7 @@ namespace ProjectManagement.Infrastracture.DTOs.UserDTOs.Queries
     {
         public string Email { get; set; }
     }
+    public class GetAllUsersRequest
+    {
+    }
 }

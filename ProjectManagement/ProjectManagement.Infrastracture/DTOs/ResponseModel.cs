@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace ProjectManagement.Infrastracture.DTOs
 {
-    public class TokenDTO
+    public class ResponseModel
     {
-        public string UserName { get; set; }
-        public string Email { get; set; }
-        public string Token { get; set; }
-
+        public bool IsSuccess { get; set; }
+        public string Message { get; set; }
+        public object Data { get; set; }
     }
 }

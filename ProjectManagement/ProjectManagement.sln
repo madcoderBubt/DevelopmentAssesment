@@ -5,15 +5,23 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectManagement", "ProjectManagement\ProjectManagement.csproj", "{658BF70A-1AE7-4C83-A700-C8F630A61C55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.AppHost", "ProjectManagement.AppHost\ProjectManagement.AppHost.csproj", "{FDC59520-8236-40A6-8C39-5D06E0969DBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectManagement.AppHost", "ProjectManagement.AppHost\ProjectManagement.AppHost.csproj", "{FDC59520-8236-40A6-8C39-5D06E0969DBC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectManagement.ServiceDefaults", "ProjectManagement.ServiceDefaults\ProjectManagement.ServiceDefaults.csproj", "{8D9B1794-75E3-4A72-9C10-1B0B1B076CF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.Core", "ProjectManagement.Core\ProjectManagement.Core.csproj", "{95566E26-1D70-4333-857D-96B91C5ECE02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectManagement.Core", "ProjectManagement.Core\ProjectManagement.Core.csproj", "{95566E26-1D70-4333-857D-96B91C5ECE02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.Infrastracture", "ProjectManagement.Infrastracture\ProjectManagement.Infrastracture.csproj", "{747F9BC5-57EC-445A-B688-8CD4311EBA5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectManagement.Infrastracture", "ProjectManagement.Infrastracture\ProjectManagement.Infrastracture.csproj", "{747F9BC5-57EC-445A-B688-8CD4311EBA5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagement.UnitTest", "ProjectManagement.UnitTest\ProjectManagement.UnitTest.csproj", "{E9D7B056-D608-427E-AE18-18EF4325DB68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectManagement.UnitTest", "ProjectManagement.UnitTest\ProjectManagement.UnitTest.csproj", "{E9D7B056-D608-427E-AE18-18EF4325DB68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{00F01A2E-2E7D-47BA-B798-41D4FF109975}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{D3AF0F3D-5A83-489B-A0A4-0ABA6141CC40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{95902BAD-C351-4AF3-B4B8-9BD9B7AB445D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{6269ADC9-6B3D-480D-889B-7BEB212B62FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +56,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{658BF70A-1AE7-4C83-A700-C8F630A61C55} = {00F01A2E-2E7D-47BA-B798-41D4FF109975}
+		{FDC59520-8236-40A6-8C39-5D06E0969DBC} = {95902BAD-C351-4AF3-B4B8-9BD9B7AB445D}
+		{8D9B1794-75E3-4A72-9C10-1B0B1B076CF2} = {95902BAD-C351-4AF3-B4B8-9BD9B7AB445D}
+		{95566E26-1D70-4333-857D-96B91C5ECE02} = {00F01A2E-2E7D-47BA-B798-41D4FF109975}
+		{747F9BC5-57EC-445A-B688-8CD4311EBA5C} = {00F01A2E-2E7D-47BA-B798-41D4FF109975}
+		{E9D7B056-D608-427E-AE18-18EF4325DB68} = {D3AF0F3D-5A83-489B-A0A4-0ABA6141CC40}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C907791F-B48B-455D-8655-A9176029A344}

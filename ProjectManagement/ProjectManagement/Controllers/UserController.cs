@@ -24,5 +24,12 @@ namespace ProjectManagement.Controllers
             var x = await _dispatcher.Handle<GetUserByIdRequest, GetUserResponse>(new GetUserByIdRequest() { UserId = id });
             return Ok(x);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetUsers()
+        {
+            var x = await _dispatcher.Handle<GetAllUsersRequest, IList<GetUserResponse>>(new GetAllUsersRequest());
+            return Ok(x);
+        }
     }
 }
