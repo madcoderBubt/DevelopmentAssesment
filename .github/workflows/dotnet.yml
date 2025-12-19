@@ -27,9 +27,6 @@ jobs:
       with:
         dotnet-version: '8.0.x' # Aspire requires .NET 8.0 or 9.0
 
-    - name: Install Aspire Workload
-      run: dotnet workload install aspire
-
     - name: Restore dependencies
       run: dotnet restore
 
