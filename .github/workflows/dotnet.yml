@@ -1,39 +1,28 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
-name: .NET Aspire Build and Test
+name: .NET Aspire CI (Simple)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main, develop ]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
-    # Set the base directory for all 'run' steps below
-    defaults:
-      run:
-        working-directory: ProjectManagement
-
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
-
-    - name: Setup .NET
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET 9
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x' # Aspire requires .NET 8.0 or 9.0
-
-    - name: Restore dependencies
+        dotnet-version: 9.0.x
+    
+    - name: Restore
       run: dotnet restore
-
-    - name: Build Solution
-      # This builds all projects in the solution (AppHost, ServiceDefaults, APIs, etc.)
+    
+    - name: Build
       run: dotnet build --no-restore --configuration Release
-
+    
     - name: Test
-      # This runs all test projects found within the solution
       run: dotnet test --no-build --configuration Release --verbosity normal
